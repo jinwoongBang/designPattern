@@ -1,5 +1,6 @@
 package _08_abstract_factory.factory;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -22,7 +23,7 @@ public abstract class Page {
     public void output() {
         try {
             String filename = title + ".html";
-            Writer writer = new FileWriter(filename);
+            Writer writer = new FileWriter("src/main/resources/static/08_abstract_factory/" + filename);
             writer.write(this.makeHTML());
             writer.close();
             System.out.println(filename + " 을 작성했습니다.");
